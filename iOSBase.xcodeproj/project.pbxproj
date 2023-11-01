@@ -54,6 +54,7 @@
 		C464B54F2AF1FCC500F61557 /* PrivateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C464B54E2AF1FCC500F61557 /* PrivateStorage.swift */; };
 		C464B5512AF1FD9500F61557 /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C464B5502AF1FD9500F61557 /* KeychainUtils.swift */; };
 		C464B5532AF23FC300F61557 /* PrivateStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C464B5522AF23FC300F61557 /* PrivateStorageClient.swift */; };
+		C464B5592AF247B200F61557 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C464B5582AF247B200F61557 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		C464B54E2AF1FCC500F61557 /* PrivateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateStorage.swift; sourceTree = "<group>"; };
 		C464B5502AF1FD9500F61557 /* KeychainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtils.swift; sourceTree = "<group>"; };
 		C464B5522AF23FC300F61557 /* PrivateStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateStorageClient.swift; sourceTree = "<group>"; };
+		C464B5582AF247B200F61557 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				C455E5FD2AEFB0D60087845A /* Assets.xcassets */,
 				C455E6022AEFB0D60087845A /* Info.plist */,
+				C464B5582AF247B200F61557 /* Localizable.xcstrings */,
 				C455E6132AEFBC860087845A /* Controller */,
 				C455E6122AEFBC7F0087845A /* Storyboards */,
 			);
@@ -426,6 +429,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = C455E5E82AEFB0D50087845A;
 			packageReferences = (
@@ -447,6 +451,7 @@
 			files = (
 				C455E6012AEFB0D60087845A /* LaunchScreen.storyboard in Resources */,
 				C455E5FE2AEFB0D60087845A /* Assets.xcassets in Resources */,
+				C464B5592AF247B200F61557 /* Localizable.xcstrings in Resources */,
 				C455E5FC2AEFB0D50087845A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +535,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -593,6 +599,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

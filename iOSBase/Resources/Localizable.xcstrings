@@ -1,0 +1,26 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Status code invalid" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mã lỗi không đúng"
+          }
+        }
+      }
+    },
+    "Unexpected empty response" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phản hồi trống rỗng không xác định"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
