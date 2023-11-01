@@ -12,32 +12,35 @@ final class RealmUtils: LocalStorage {
     
     let realm = try? Realm()
     
-    func create(data: LocalStorageInputCreateData) throws {
-        if case let .realm(object) = data {
-            try realm?.write({
+    func create(data: LocalStorageInputCreateData) {
+        if case let .realm(data) = data,
+           let object = data.object {
+            try? realm?.write({
                 realm?.add(object)
             })
         }
     }
     
-    func read(data: LocalStorageInputReadData) throws -> Any? {
-        if case let .realm(type) = data {
+    func read(data: LocalStorageInputReadData) -> Any? {
+        if case let .realm(data) = data, let type = data.objectType {
             return realm?.objects(type)
         }
         return nil
     }
     
-    func update(data: LocalStorageInputUpdateData) throws {
-        if case let .realm(object) = data {
-            try realm?.write({
+    func update(data: LocalStorageInputUpdateData) {
+        if case let .realm(data) = data,
+           let object = data.object {
+            try? realm?.write({
                 realm?.add(object, update: .modified)
             })
         }
     }
     
-    func delete(data: LocalStorageInputDeleteData) throws {
-        if case let .realm(object) = data {
-            try realm?.write({
+    func delete(data: LocalStorageInputDeleteData) {
+        if case let .realm(data) = data,
+           let object = data.object {
+            try? realm?.write({
                 realm?.delete(object)
             })
         }

@@ -11,12 +11,12 @@ protocol LocalStorageClient {
     
     init(localStorage: LocalStorage)
     
-    func create(data: LocalStorageInputCreateData) throws
+    func create(data: LocalStorageData)
     
-    func read(data: LocalStorageInputReadData) throws -> Any?
+    func read(data: LocalStorageData) -> Any?
     
-    func update(data: LocalStorageInputUpdateData) throws
+    func update(data: LocalStorageData)
     
-    func delete(data: LocalStorageInputDeleteData) throws
+    func delete(data: LocalStorageData)
     
 }

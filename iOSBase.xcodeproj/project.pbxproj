@@ -50,10 +50,10 @@
 		C455E6772AF11C9E0087845A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C455E6762AF11C9E0087845A /* Realm */; };
 		C455E6792AF11C9E0087845A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C455E6782AF11C9E0087845A /* RealmSwift */; };
 		C455E67C2AF11CDC0087845A /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455E67B2AF11CDC0087845A /* RealmUtils.swift */; };
-		C455E6812AF128F60087845A /* APIManager+URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455E6802AF128F60087845A /* APIManager+URLSession.swift */; };
 		C455E6832AF12A270087845A /* LocalStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455E6822AF12A270087845A /* LocalStorageClient.swift */; };
-		C455E6862AF12ABC0087845A /* LocalStorageManager+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455E6852AF12ABC0087845A /* LocalStorageManager+UserDefaults.swift */; };
-		C455E6882AF12AD40087845A /* LocalStorageManager+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455E6872AF12AD40087845A /* LocalStorageManager+Realm.swift */; };
+		C464B54F2AF1FCC500F61557 /* PrivateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C464B54E2AF1FCC500F61557 /* PrivateStorage.swift */; };
+		C464B5512AF1FD9500F61557 /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C464B5502AF1FD9500F61557 /* KeychainUtils.swift */; };
+		C464B5532AF23FC300F61557 /* PrivateStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C464B5522AF23FC300F61557 /* PrivateStorageClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,10 +100,10 @@
 		C455E6702AF10D890087845A /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		C455E6732AF10DE80087845A /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		C455E67B2AF11CDC0087845A /* RealmUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtils.swift; sourceTree = "<group>"; };
-		C455E6802AF128F60087845A /* APIManager+URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+URLSession.swift"; sourceTree = "<group>"; };
 		C455E6822AF12A270087845A /* LocalStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageClient.swift; sourceTree = "<group>"; };
-		C455E6852AF12ABC0087845A /* LocalStorageManager+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalStorageManager+UserDefaults.swift"; sourceTree = "<group>"; };
-		C455E6872AF12AD40087845A /* LocalStorageManager+Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalStorageManager+Realm.swift"; sourceTree = "<group>"; };
+		C464B54E2AF1FCC500F61557 /* PrivateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateStorage.swift; sourceTree = "<group>"; };
+		C464B5502AF1FD9500F61557 /* KeychainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtils.swift; sourceTree = "<group>"; };
+		C464B5522AF23FC300F61557 /* PrivateStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateStorageClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +195,7 @@
 		C455E60E2AEFB22D0087845A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C464B54A2AF1FC8D00F61557 /* PrivateStorageUtils */,
 				C455E6692AF10AFF0087845A /* LocalStorageUtils */,
 				C455E6282AF0A4F10087845A /* NetworkUtils */,
 			);
@@ -231,7 +232,6 @@
 		C455E6162AEFBCC20087845A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C455E6892AF130370087845A /* Managers */,
 				C455E6172AEFBCE40087845A /* StoryboardExtension.swift */,
 				C455E6472AF0A8530087845A /* ButtonExtension.swift */,
 				C455E6452AF0A8530087845A /* ColorExtension.swift */,
@@ -346,14 +346,38 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
-		C455E6892AF130370087845A /* Managers */ = {
+		C464B54A2AF1FC8D00F61557 /* PrivateStorageUtils */ = {
 			isa = PBXGroup;
 			children = (
-				C455E6802AF128F60087845A /* APIManager+URLSession.swift */,
-				C455E6852AF12ABC0087845A /* LocalStorageManager+UserDefaults.swift */,
-				C455E6872AF12AD40087845A /* LocalStorageManager+Realm.swift */,
+				C464B54C2AF1FCA400F61557 /* Client */,
+				C464B54B2AF1FC9C00F61557 /* Keychain */,
+				C464B54D2AF1FCB200F61557 /* Common */,
 			);
-			path = Managers;
+			path = PrivateStorageUtils;
+			sourceTree = "<group>";
+		};
+		C464B54B2AF1FC9C00F61557 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				C464B5502AF1FD9500F61557 /* KeychainUtils.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		C464B54C2AF1FCA400F61557 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				C464B5522AF23FC300F61557 /* PrivateStorageClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		C464B54D2AF1FCB200F61557 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C464B54E2AF1FCC500F61557 /* PrivateStorage.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,8 +466,9 @@
 				C455E67C2AF11CDC0087845A /* RealmUtils.swift in Sources */,
 				C455E6412AF0A7F50087845A /* MultipartMedia.swift in Sources */,
 				C455E6382AF0A7200087845A /* EncodingConfiguration.swift in Sources */,
-				C455E6862AF12ABC0087845A /* LocalStorageManager+UserDefaults.swift in Sources */,
 				C455E61C2AF098FB0087845A /* APIManager.swift in Sources */,
+				C464B54F2AF1FCC500F61557 /* PrivateStorage.swift in Sources */,
+				C464B5512AF1FD9500F61557 /* KeychainUtils.swift in Sources */,
 				C455E6152AEFBC9C0087845A /* MainViewController.swift in Sources */,
 				C455E64F2AF0A8530087845A /* LabelExtension.swift in Sources */,
 				C455E6712AF10D890087845A /* LocalStorage.swift in Sources */,
@@ -463,7 +488,7 @@
 				C455E65D2AF0AF3D0087845A /* APIEndpoint.swift in Sources */,
 				C455E6682AF0B2D00087845A /* URLSessionNetworkProvider.swift in Sources */,
 				C455E62E2AF0A4F10087845A /* DecodingConfiguration.swift in Sources */,
-				C455E6882AF12AD40087845A /* LocalStorageManager+Realm.swift in Sources */,
+				C464B5532AF23FC300F61557 /* PrivateStorageClient.swift in Sources */,
 				C455E6322AF0A4F10087845A /* Endpoint.swift in Sources */,
 				C455E64D2AF0A8530087845A /* ViewControllerExtension.swift in Sources */,
 				C455E66B2AF10B5D0087845A /* LocalStorageManager.swift in Sources */,
@@ -471,7 +496,6 @@
 				C455E6542AF0A8530087845A /* StringExtension.swift in Sources */,
 				C455E65B2AF0ADFA0087845A /* HeadersProvider.swift in Sources */,
 				C455E6312AF0A4F10087845A /* EndpointProtocols.swift in Sources */,
-				C455E6812AF128F60087845A /* APIManager+URLSession.swift in Sources */,
 				C455E6652AF0B0440087845A /* JSONDecoderExtension.swift in Sources */,
 				C455E6362AF0A6EE0087845A /* APIClient.swift in Sources */,
 				C455E65F2AF0AF720087845A /* APIClientError.swift in Sources */,
@@ -629,7 +653,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S2ZX62N2EP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iOSBase/Info.plist;
+				INFOPLIST_FILE = iOSBase/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -662,7 +686,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S2ZX62N2EP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iOSBase/Info.plist;
+				INFOPLIST_FILE = iOSBase/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

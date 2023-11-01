@@ -18,6 +18,8 @@ final class APIManager: APIClient {
   private(set) var decodingConfiguration: DecodingConfiguration = .default
 
   private(set) var headersProvider: HeadersProvider = [:]
+    
+  static let urlSession = APIManager(networkProvider: URLSessionNetworkProvider())
 
   private let networkProvider: NetworkProvider
 

@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: SampleChildCoordinator?
+    var coordinator: Coordinator?
     
     static func instantiate() -> Self {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -11,23 +11,62 @@ final class LocalStorageManager: LocalStorageClient {
     
     var localStorage: LocalStorage
     
+    static let userDefaults = LocalStorageManager(localStorage: UserDefaultsUtils())
+    static let realm = LocalStorageManager(localStorage: RealmUtils())
+    
     init(localStorage: LocalStorage) {
         self.localStorage = localStorage
     }
     
-    func create(data: LocalStorageInputCreateData) throws {
-        try localStorage.create(data: data)
+    func create(data: LocalStorageData) {
+        var convertedData: LocalStorageInputCreateData
+        switch localStorage {
+        case is UserDefaultsUtils:
+            convertedData = LocalStorageInputCreateData.userDefaults(data)
+        case is RealmUtils:
+            convertedData = LocalStorageInputCreateData.realm(data)
+        default:
+            return
+        }
+        localStorage.create(data: convertedData)
     }
     
-    func read(data: LocalStorageInputReadData) throws -> Any? {
-        try localStorage.read(data: data)
+    func read(data: LocalStorageData) -> Any? {
+        var convertedData: LocalStorageInputReadData
+        switch localStorage {
+        case is UserDefaultsUtils:
+            convertedData = LocalStorageInputReadData.userDefaults(data)
+        case is RealmUtils:
+            convertedData = LocalStorageInputReadData.realm(data)
+        default:
+            return nil
+        }
+        return localStorage.read(data: convertedData)
     }
     
-    func update(data: LocalStorageInputUpdateData) throws {
-        try localStorage.update(data: data)
+    func update(data: LocalStorageData) {
+        var convertedData: LocalStorageInputUpdateData
+        switch localStorage {
+        case is UserDefaultsUtils:
+            convertedData = LocalStorageInputUpdateData.userDefaults(data)
+        case is RealmUtils:
+            convertedData = LocalStorageInputUpdateData.realm(data)
+        default:
+            return
+        }
+        localStorage.update(data: convertedData)
     }
     
-    func delete(data: LocalStorageInputDeleteData) throws {
-        try localStorage.delete(data: data)
+    func delete(data: LocalStorageData) {
+        var convertedData: LocalStorageInputDeleteData
+        switch localStorage {
+        case is UserDefaultsUtils:
+            convertedData = LocalStorageInputDeleteData.userDefaults(data)
+        case is RealmUtils:
+            convertedData = LocalStorageInputDeleteData.realm(data)
+        default:
+            return
+        }
+        localStorage.delete(data: convertedData)
     }
 }
